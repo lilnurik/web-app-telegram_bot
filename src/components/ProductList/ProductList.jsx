@@ -5,14 +5,14 @@ import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
 
 const products = [
-    {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
-    {id: '2', title: 'Куртка', price: 12000, description: 'Зеленого цвета, теплая'},
-    {id: '3', title: 'Джинсы 2', price: 5000, description: 'Синего цвета, прямые'},
-    {id: '4', title: 'Куртка 8', price: 122, description: 'Зеленого цвета, теплая'},
-    {id: '5', title: 'Джинсы 3', price: 5000, description: 'Синего цвета, прямые'},
-    {id: '6', title: 'Куртка 7', price: 600, description: 'Зеленого цвета, теплая'},
-    {id: '7', title: 'Джинсы 4', price: 5500, description: 'Синего цвета, прямые'},
-    {id: '8', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая'},
+    {id: '1',img:'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '2',img:'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', title: 'Куртка', price: 12000, description: 'Зеленого цвета, теплая'},
+    {id: '3',img:'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', title: 'Джинсы 2', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '4',img:'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', title: 'Куртка 8', price: 122, description: 'Зеленого цвета, теплая'},
+    {id: '5',img:'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', title: 'Джинсы 3', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '6',img:'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', title: 'Куртка 7', price: 600, description: 'Зеленого цвета, теплая'},
+    {id: '7',img:'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', title: 'Джинсы 4', price: 5500, description: 'Синего цвета, прямые'},
+    {id: '8',img:'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая'},
 ]
 
 const getTotalPrice = (items = []) => {
@@ -31,7 +31,8 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        fetch('http://85.119.146.179:8000/web-data', {
+        // http://85.119.146.179:8000/web-data
+        fetch('localhost:8000', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
